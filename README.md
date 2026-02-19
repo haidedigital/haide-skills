@@ -36,6 +36,11 @@ Skills override Claude's general behavior with project-specific rules.
 |---|---|
 | [haide-seo](seo/haide-seo/) | Structured data, meta tags, GEO optimization, technical SEO |
 
+### Security
+| Skill | Description |
+|---|---|
+| [security-headers](security/security-headers/) | CSP, security headers, form hardening, GDPR cookie consent, PII handling |
+
 ### Performance & Quality
 | Skill | Description |
 |---|---|
