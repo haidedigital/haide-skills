@@ -41,6 +41,11 @@ Skills override Claude's general behavior with project-specific rules.
 |---|---|
 | [security-headers](security/security-headers/) | CSP, security headers, form hardening, GDPR cookie consent, PII handling |
 
+### Analytics
+| Skill | Description |
+|---|---|
+| [analytics-tracking](analytics/analytics-tracking/) | GTM/GA4 integration, event taxonomy, cookie consent, UTM handling, Search Console |
+
 ### Performance & Quality
 | Skill | Description |
 |---|---|
