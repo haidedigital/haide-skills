@@ -1,6 +1,6 @@
 ---
 name: component-audit
-description: Master pre-ship audit for the Haide Digital website. Runs a 7-domain sequential review — Brand, Architecture, Animation, Mobile, Performance, Copy, SEO — against all other Haide skill standards. Use this skill on every component, section, or page before marking it complete. Output is a scored report with PASS / FAIL / WARNING per section, exact issue descriptions with file:line references, and a concrete fix for every failure. Nothing ships with a FAIL.
+description: Master pre-ship audit for the Haide Digital website. Runs a 10-domain sequential review — Brand, Architecture, Animation, Mobile, Performance, Copy, SEO, Security, Accessibility, Error Handling — against all other Haide skill standards. Use this skill on every component, section, or page before marking it complete. Output is a scored report with PASS / FAIL / WARNING per section, exact issue descriptions with file:line references, and a concrete fix for every failure. Nothing ships with a FAIL.
 ---
 
 # Component Audit — Haide Digital
@@ -8,6 +8,8 @@ description: Master pre-ship audit for the Haide Digital website. Runs a 7-domai
 ## The Gate
 
 This is the final checkpoint before any component, section, or page ships. It cross-references every Haide Digital skill domain in one pass. Run it in full — do not skip sections.
+
+**Domains:** Brand → Architecture → Animation → Mobile → Performance → Copy → SEO → Security → Accessibility → Error Handling
 
 **Completion rule:**
 - ✅ **PASS** or ⚠️ **WARNING** → may ship (warnings are logged, not blocking)
@@ -143,7 +145,7 @@ This is the final checkpoint before any component, section, or page ships. It cr
 ---
 
 ### 7 · SEO Audit
-**Skill:** `haide-seo-schema/SKILL.md`
+**Skill:** `haide-seo/SKILL.md`
 
 *(Only required for page-level components and sections that contribute to SEO signals.)*
 
@@ -163,6 +165,68 @@ This is the final checkpoint before any component, section, or page ships. It cr
 
 ---
 
+### 8 · Security Audit
+**Skill:** `security-headers/SKILL.md`
+
+*(Required for components with forms, API calls, user input, or third-party scripts.)*
+
+| Check | Verdict |
+|---|---|
+| Form inputs sanitized — no raw user input rendered or stored | |
+| API route has server-side validation (Zod schema, not just frontend) | |
+| Honeypot field present on forms | |
+| CSRF protection — origin validation on API routes | |
+| No PII logged to console (names, emails, messages) | |
+| Third-party scripts loaded only after cookie consent | |
+| No `dangerouslySetInnerHTML` with user-supplied content | |
+
+**Verdict:** PASS / FAIL / WARNING / N/A
+**Issues:**
+**Fixes:**
+
+---
+
+### 9 · Accessibility Audit
+**Skill:** `accessibility-a11y/SKILL.md`
+
+| Check | Verdict |
+|---|---|
+| All text meets WCAG AA contrast ratios (4.5:1 normal, 3:1 large) | |
+| All interactive elements have `:focus-visible` ring | |
+| Keyboard navigation works — Tab order follows visual order | |
+| ARIA attributes correct (`aria-expanded`, `aria-controls`, `aria-label`) | |
+| Icon-only buttons have `aria-label`; decorative SVGs have `aria-hidden="true"` | |
+| All `<Image>` components have meaningful `alt` (or `alt=""` if decorative) | |
+| `prefers-reduced-motion` respected — animations gated | |
+| No hover-only states without `:focus-visible` / `:active` equivalents | |
+
+**Verdict:** PASS / FAIL / WARNING
+**Issues:**
+**Fixes:**
+
+---
+
+### 10 · Error Handling Audit
+**Skill:** `error-handling-monitoring/SKILL.md`
+
+*(Required for pages, async components, dynamic imports, 3D scenes, and forms.)*
+
+| Check | Verdict |
+|---|---|
+| `<Suspense>` boundary with skeleton fallback wraps async / dynamic content | |
+| Three.js / WebGL wrapped in error boundary with static fallback | |
+| GSAP setup in `try/catch` — content visible if animation fails | |
+| Initial states use `gsap.set()` not CSS `opacity: 0` | |
+| Form preserves user input on error — never resets on failure | |
+| API errors return `{ error, code }` shape — no stack traces exposed to client | |
+| Error states use branded Haide UI — not default browser or Next.js error page | |
+
+**Verdict:** PASS / FAIL / WARNING / N/A
+**Issues:**
+**Fixes:**
+
+---
+
 ## Final Ruling
 
 ```
@@ -170,13 +234,16 @@ Component: [Name]
 File: [path/to/Component.tsx]
 Date: [YYYY-MM-DD]
 
-BRAND        ✅ PASS / ⚠️ WARNING / ❌ FAIL
-ARCHITECTURE ✅ PASS / ⚠️ WARNING / ❌ FAIL
-ANIMATION    ✅ PASS / ⚠️ WARNING / ❌ FAIL
-MOBILE       ✅ PASS / ⚠️ WARNING / ❌ FAIL
-PERFORMANCE  ✅ PASS / ⚠️ WARNING / ❌ FAIL
-COPY         ✅ PASS / ⚠️ WARNING / ❌ FAIL
-SEO          ✅ PASS / ⚠️ WARNING / ❌ FAIL
+BRAND          ✅ PASS / ⚠️ WARNING / ❌ FAIL
+ARCHITECTURE   ✅ PASS / ⚠️ WARNING / ❌ FAIL
+ANIMATION      ✅ PASS / ⚠️ WARNING / ❌ FAIL
+MOBILE         ✅ PASS / ⚠️ WARNING / ❌ FAIL
+PERFORMANCE    ✅ PASS / ⚠️ WARNING / ❌ FAIL
+COPY           ✅ PASS / ⚠️ WARNING / ❌ FAIL
+SEO            ✅ PASS / ⚠️ WARNING / ❌ FAIL
+SECURITY       ✅ PASS / ⚠️ WARNING / ❌ FAIL / N/A
+ACCESSIBILITY  ✅ PASS / ⚠️ WARNING / ❌ FAIL
+ERROR HANDLING ✅ PASS / ⚠️ WARNING / ❌ FAIL / N/A
 
 OVERALL: ✅ APPROVED TO SHIP / ❌ REQUIRES FIXES
 ```

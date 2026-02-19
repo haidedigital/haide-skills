@@ -46,12 +46,27 @@ Skills override Claude's general behavior with project-specific rules.
 |---|---|
 | [analytics-tracking](analytics/analytics-tracking/) | GTM/GA4 integration, event taxonomy, cookie consent, UTM handling, Search Console |
 
+### Accessibility
+| Skill | Description |
+|---|---|
+| [accessibility-a11y](accessibility/accessibility-a11y/) | WCAG 2.1 AA compliance, contrast ratios, ARIA patterns, keyboard nav, focus management |
+
+### Error Handling & Monitoring
+| Skill | Description |
+|---|---|
+| [error-handling-monitoring](error-handling/error-handling-monitoring/) | Error boundaries, Sentry, fallback UI, API error contracts, ChunkLoadError recovery |
+
+### CI/CD & Deployment
+| Skill | Description |
+|---|---|
+| [cicd-deployment](cicd/cicd-deployment/) | GitHub Actions pipeline, Vercel config, Lighthouse CI, bundle analysis, rollback |
+
 ### Performance & Quality
 | Skill | Description |
 |---|---|
 | [performance-budget](performance-and-quality/performance-budget/) | CWV enforcement, asset budgets, Lighthouse 95+ target |
 | [mobile-first-haide](performance-and-quality/mobile-first-haide/) | Touch targets, responsive animations, mobile audit checklist |
-| [component-audit](performance-and-quality/component-audit/) | 7-domain pre-ship gate (Brand, Arch, Animation, Mobile, Perf, Copy, SEO) |
+| [component-audit](performance-and-quality/component-audit/) | 10-domain pre-ship gate (Brand, Arch, Animation, Mobile, Perf, Copy, SEO, Security, A11y, Error Handling) |
 
 ### Process & Documentation
 | Skill | Description |
