@@ -77,6 +77,7 @@ Skills override Claude's general behavior with project-specific rules.
 | Skill | Description |
 |---|---|
 | [action-catalog](process/action-catalog/) | Documents build actions for case studies, YouTube, and SOPs |
+| [skill-registry](process/skill-registry/) | Post-creation pipeline — package, push to GitHub, update CLAUDE.md, sync Notion, audit codebase |
 
 ### Knowledge Base (Reference Files)
 | File | Domain | Size |
