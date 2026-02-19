@@ -61,6 +61,11 @@ Skills override Claude's general behavior with project-specific rules.
 |---|---|
 | [cicd-deployment](cicd/cicd-deployment/) | GitHub Actions pipeline, Vercel config, Lighthouse CI, bundle analysis, rollback |
 
+### Testing
+| Skill | Description |
+|---|---|
+| [testing](testing/testing/) | Vitest unit/integration, Playwright E2E, visual regression, MSW mocking, CI test pipeline |
+
 ### Performance & Quality
 | Skill | Description |
 |---|---|
