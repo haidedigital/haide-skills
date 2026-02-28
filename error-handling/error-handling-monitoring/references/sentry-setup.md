@@ -29,8 +29,8 @@ Add to `.env.local` (never commit these):
 NEXT_PUBLIC_SENTRY_DSN=https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx@oXXXXXX.ingest.sentry.io/XXXXXXX
 SENTRY_DSN=https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx@oXXXXXX.ingest.sentry.io/XXXXXXX
 SENTRY_AUTH_TOKEN=sntrys_xxxxxxxxxxxxxxxx
-SENTRY_ORG=haide-digital
-SENTRY_PROJECT=haide-digital-production
+SENTRY_ORG=your-sentry-org
+SENTRY_PROJECT=your-sentry-project
 ```
 
 Add `SENTRY_AUTH_TOKEN`, `SENTRY_DSN`, `SENTRY_ORG`, `SENTRY_PROJECT` to Cloudflare Pages environment variables for production source map uploads.
@@ -157,20 +157,20 @@ In Sentry → **Alerts** → **Create Alert Rule**:
 
 - **Name:** Error rate spike
 - **Trigger:** `errors` count > 50 in a 5-minute window
-- **Actions:** Email `dev@haide.digital` + Slack `#incidents`
+- **Actions:** Email `dev@your-domain.com` + Slack `#incidents`
 
 ### Alert 2: New Error Type
 
 - **Name:** New error type
 - **Trigger:** New issue detected with ≥ 10 occurrences in 1 hour
-- **Actions:** Email `dev@haide.digital`
+- **Actions:** Email `dev@your-domain.com`
 
 ### Alert 3: LCP Degradation (Performance Alert)
 
 - **Name:** LCP degradation
 - **Metric:** `p75(measurements.lcp)`
 - **Trigger:** 20% increase over baseline in 1-hour window
-- **Actions:** Email `dev@haide.digital`
+- **Actions:** Email `dev@your-domain.com`
 
 ### Alert 4: API 5xx Rate
 

@@ -8,16 +8,16 @@ All file paths, tool locations, and external IDs needed by the skill-registry pi
 
 | Item | Path |
 |---|---|
-| Project root | `d:/Work/Vibe Code/Antigravity/Haide Website - Figma Import` |
-| haide-skills repo | `d:/Work/Vibe Code/Antigravity/haide-skills` |
-| CLAUDE.md | `d:/Work/Vibe Code/Antigravity/Haide Website - Figma Import/CLAUDE.md` |
+| Project root | `<project-root>` |
+| haide-skills repo | `<project-root>/../haide-skills` |
+| CLAUDE.md | `<project-root>/CLAUDE.md` |
 
 ## Tools
 
 | Tool | Path / Command |
 |---|---|
-| Python | `/c/Users/Admin/AppData/Local/Programs/Python/Python313/python.exe` |
-| package_skill.py | `d:/Work/Vibe Code/Antigravity/haide.digital website/Skills/skill-creator/scripts/package_skill.py` |
+| Python | `python3` (or system Python) |
+| package_skill.py | `<haide-skills-repo>/process/skill-creator/scripts/package_skill.py` |
 | Package command | `PYTHONIOENCODING=utf-8 <python> <package_script> <skill-dir> <output-dir>` |
 
 ## GitHub
@@ -32,9 +32,9 @@ All file paths, tool locations, and external IDs needed by the skill-registry pi
 
 | Page | ID |
 |---|---|
-| Skills Library | `30c396e4-bf57-81cf-b448-f5facc530b09` |
-| Future Improvements | `30c396e4-bf57-8194-b6f9-fc08de7acc06` |
-| Haide Website (parent) | `2fa396e4bf578133a8a5ff7358e60c91` |
+| Skills Library | `<notion-skills-library-id>` |
+| Future Improvements | `<notion-future-improvements-id>` |
+| Haide Website (parent) | `<notion-website-parent-id>` |
 
 ## Notion Fetch Pattern
 

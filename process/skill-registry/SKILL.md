@@ -102,7 +102,7 @@ Also update any existing entries that now reference or are referenced by this sk
 
 ### Step 6: Update Notion Skills Library
 
-Page ID: `30c396e4-bf57-81cf-b448-f5facc530b09`
+Page ID: See `references/paths.md` → Notion Page IDs → Skills Library
 
 1. Fetch the page to see current content
 2. Find the correct category section (see `references/category-map.md` for Notion color mappings)
@@ -122,7 +122,7 @@ Table row format:
 
 ### Step 7: Update Notion Future Improvements
 
-Page ID: `30c396e4-bf57-8194-b6f9-fc08de7acc06`
+Page ID: See `references/paths.md` → Notion Page IDs → Future Improvements
 
 Check the "Missing Skills" table. If this skill was listed as missing:
 - Strike through the name: `~~Skill Name~~`
